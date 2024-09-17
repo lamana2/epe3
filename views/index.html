@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sistema de Gestión de Estudiantes</title>
+    <link rel="stylesheet" href="public/styles.css"> <!-- Ruta del CSS -->
+    <style>
+        /* Estilos aquí (sin cambios) */
+    </style>
+</head>
+<body>
+    <header>
+        <h1>Sistema de Gestión de Estudiantes</h1>
+        <p>Gestiona estudiantes y cursos de manera eficiente.</p>
+    </header>
+
+    <!-- Menú de navegación -->
+    <nav>
+        <ul>
+            <li><a href="#" id="verEstudiantes">Ver Estudiantes</a></li>
+            <li><a href="#" id="verCursos">Ver Cursos</a></li>
+            <li><a href="#" id="agregarEstudiante">Agregar Estudiante</a></li>
+            <li><a href="#" id="agregarCurso">Agregar Curso</a></li>
+            <li><a href="#" id="relacionarEstudiantesCurso">Relacionar Curso - Estudiante</a></li>
+            <li><a href="#" id="verEstudiantesPorCurso">Ver Estudiantes por Curso</a></li>
+        </ul>
+    </nav>
+
+    <!-- Sección para mostrar el contenido -->
+    <main id="contenido">
+        <p>Selecciona una opción del menú para comenzar.</p>
+    </main>
+
+    <!-- Formularios para agregar y modificar estudiantes/cursos -->
+    <section id="formularios">
+        <!-- Formulario para agregar/modificar estudiante -->
+        <div id="formEstudiante" class="form-container" style="display:none;">
+            <h2 id="tituloFormEstudiante">Agregar Estudiante</h2>
+            <form id="formEstudianteDatos">
+                <input type="hidden" id="estudianteId">
+                <label for="nombre">Nombre:</label>
+                <input type="text" id="nombre" required placeholder="Introduce el nombre del estudiante">
+                <label for="edad">Edad:</label>
+                <input type="number" id="edad" required placeholder="Introduce la edad del estudiante">
+                <button type="submit" id="submitEstudiante">Guardar Estudiante</button>
+            </form>
+        </div>
+
+        <!-- Formulario para agregar/modificar curso -->
+        <div id="formCurso" class="form-container" style="display:none;">
+            <h2 id="tituloFormCurso">Agregar Curso</h2>
+            <form id="formCursoDatos">
+                <input type="hidden" id="cursoId">
+                <label for="nombreCurso">Nombre del Curso:</label>
+                <input type="text" id="nombreCurso" required placeholder="Introduce el nombre del curso">
+                <label for="duracion">Duración:</label>
+                <input type="text" id="duracion" required placeholder="Introduce la duración del curso">
+                <button type="submit" id="submitCurso">Guardar Curso</button>
+            </form>
+        </div>
+
+        <!-- Formulario para asignar estudiantes a cursos -->
+        <div id="formAsignar" class="form-container" style="display:none;">
+            <h2>Asignar Estudiante a Curso</h2>
+            <form id="formAsignarDatos">
+                <label for="estudianteSelect">Selecciona Estudiante:</label>
+                <select id="estudianteSelect" required></select>
+                <label for="cursoSelect">Selecciona Curso:</label>
+                <select id="cursoSelect" required></select>
+                <button type="submit" id="submitAsignar">Asignar Estudiante a Curso</button>
+            </form>
+        </div>
+
+        <!-- Formulario para ver estudiantes en un curso -->
+        <div id="formVerEstudiantesPorCurso" class="form-container" style="display:none;">
+            <h2>Ver Estudiantes por Curso</h2>
+            <form id="formVerEstudiantesCurso">
+                <label for="cursoSelectVer">Selecciona Curso:</label>
+                <select id="cursoSelectVer" required></select>
+                <button type="submit" id="submitVerEstudiantes">Ver Estudiantes</button>
+            </form>
+            <div id="resultadosEstudiantesPorCurso"></div>
+        </div>
+    </section>
+
+    <script src="/main.js"></script>
+</body>
+</html>
